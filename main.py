@@ -1,4 +1,5 @@
 # Advent Of Code 2020 in Python
+# Code by mcmiller905@gmail.com
 # Change dayToRun to the desired Day
 dayToRun = 1
 
