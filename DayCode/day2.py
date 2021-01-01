@@ -1,5 +1,5 @@
 def runCode():
-    inputFile = open ('DayCode/day2Input.txt', 'r')
+    inputFile = open ('DayCode/Inputs/day2Input.txt', 'r')
     lines = inputFile.readlines()
 
     validPass = 0

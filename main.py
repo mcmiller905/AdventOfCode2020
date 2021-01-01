@@ -1,7 +1,7 @@
 # Advent Of Code 2020 in Python
 # Code by mcmiller905@gmail.com
 # Change dayToRun to the desired Day
-dayToRun = 3
+dayToRun = 1
 
 # Run desired day's code
 if dayToRun == 1:
@@ -25,3 +25,10 @@ if dayToRun == 3:
     print()
     import DayCode.day3 as day3
     day3.runCode()
+if dayToRun == 4:
+    print("#####################")
+    print("####### DAY 4 #######")
+    print("#####################")
+    print()
+    import DayCode.day4 as day4
+    day4.runCode()

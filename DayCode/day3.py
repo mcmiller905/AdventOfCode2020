@@ -1,5 +1,5 @@
 def runCode():
-    inputFile = open ('DayCode/day3Input.txt', 'r')
+    inputFile = open ('DayCode/Inputs/day3Input.txt', 'r')
     lines = inputFile.readlines()
 
     slopeList = [1, 3, 5, 7]

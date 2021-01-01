@@ -1,5 +1,5 @@
 def runCode():
-    inputFile = open('DayCode/day1Input.txt', 'r')
+    inputFile = open('DayCode/Inputs/day1Input.txt', 'r')
     numbers = inputFile.readlines()
 
     count = 0
