@@ -26,7 +26,7 @@ def runCode():
                     #numAdj = getAdjSeats(i,j,grid)
                     #part 2
                     numAdj = getVisibleSeats(i,j,grid)
-                    if(numAdj > 3):
+                    if(numAdj > 4):
                         newRow += "L"
                     else:
                         newRow += "#"

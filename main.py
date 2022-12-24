@@ -1,83 +1,38 @@
 # Advent Of Code 2020 in Python
 # Code by mcmiller905@gmail.com
+from importlib import import_module
+import os, time
 # Change dayToRun to the desired Day
-dayToRun = 11
+dayToRun = 10
+run = True
 
-# Run desired day's code
-if dayToRun == 1:
-    print("#####################")
-    print("####### DAY 1 #######")
-    print("#####################")
+def runDay(dayNum):
     print()
-    import DayCode.day1 as day1
-    day1.runCode()
-if dayToRun == 2:
-    print("#####################")
-    print("####### DAY 2 #######")
-    print("#####################")
+    print("*--------------------")
+    print("*  DAY " + str(dayNum))
+    print("*--------------------")
     print()
-    import DayCode.day2 as day2
-    day2.runCode()
-if dayToRun == 3:
-    print("#####################")
-    print("####### DAY 3 #######")
-    print("#####################")
+    module = import_module('DayCode.day'+str(dayNum))
+    runCode = getattr(module, 'runCode')
+    startTime = time.perf_counter()
+    answer = runCode()
+    endTime = time.perf_counter()
+    print(f"Runtime: - {1000 * (endTime - startTime):0.2f}ms")
+
+if(dayToRun == 0):
+    numFiles = len(next(os.walk("DayCode"))[2]) + 1
+    i = 1
+    totalStartTime = time.perf_counter()
+    while(i < numFiles):
+        runDay(i)
+        i+=1
+    totalEndTime = time.perf_counter()
+    runTime = 1000 * (totalEndTime - totalStartTime)
+    runTimeText = f"{runTime:0.2f}ms"
+    if(runTime > 1000):
+        runTimeText = f"{(runTime/1000):0.2f}s"
     print()
-    import DayCode.day3 as day3
-    day3.runCode()
-if dayToRun == 4:
-    print("#####################")
-    print("####### DAY 4 #######")
-    print("#####################")
-    print()
-    import DayCode.day4 as day4
-    day4.runCode()
-if dayToRun == 5:
-    print("#####################")
-    print("####### DAY 5 #######")
-    print("#####################")
-    print()
-    import DayCode.day5 as day5
-    day5.runCode()
-if dayToRun == 6:
-    print("#####################")
-    print("####### DAY 6 #######")
-    print("#####################")
-    print()
-    import DayCode.day6 as day6
-    day6.runCode()
-if dayToRun == 7:
-    print("#####################")
-    print("####### DAY 7 #######")
-    print("#####################")
-    print()
-    import DayCode.day7 as day7
-    day7.runCode()
-if dayToRun == 8:
-    print("#####################")
-    print("####### DAY 8 #######")
-    print("#####################")
-    print()
-    import DayCode.day8 as day8
-    day8.runCode()
-if dayToRun == 9:
-    print("#####################")
-    print("####### DAY 9 #######")
-    print("#####################")
-    print()
-    import DayCode.day9 as day9
-    day9.runCode()
-if dayToRun == 10:
-    print("#####################")
-    print("####### DAY 10 ######")
-    print("#####################")
-    print()
-    import DayCode.day10 as day10
-    day10.runCode()
-if dayToRun == 11:
-    print("#####################")
-    print("####### DAY 11 ######")
-    print("#####################")
-    print()
-    import DayCode.day11 as day11
-    day11.runCode()
+    print(f"Total time: - " + runTimeText)
+else:
+    runDay(dayToRun)
+print()
